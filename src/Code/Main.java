@@ -4,12 +4,9 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
-		FileReader read = new FileReader("fancy.txt");
+		ReadFile read = new ReadFile("hamlet.txt");
+		read.numberOfEachLetter();
 		
-		String s = read.readFile();
-		System.out.println(s);
-		System.out.println();
-		System.out.println(read.numberOfLetter('a'));
 		
 	}
 

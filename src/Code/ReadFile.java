@@ -1,25 +1,23 @@
 package Code;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class FileReader {
+public class ReadFile {
 
-	
-	
 	String fileName;
 
-	
-	
-	public FileReader() {
+	public ReadFile() {
 
 	}
 
-	public FileReader(String fileName) {
+	public ReadFile(String fileName) {
 		this.fileName = fileName;
 	}
 
@@ -69,8 +67,28 @@ public class FileReader {
 		}
 		return count;
 	}
-	
-	
-	
-	
+
+	@SuppressWarnings("resource")
+	public void numberOfEachLetter() throws IOException {
+
+		File file = new File(fileName);
+		int counter = 0;
+		int ch;
+		
+		for (char a : "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()) {
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			
+			char toSearch = a;
+			counter = 0;
+
+			while ((ch = reader.read()) != -1) {
+				if (a == Character.toUpperCase((char) ch)) {
+					counter++;
+				}
+			}
+			System.out.println(toSearch + " occurs " + counter);
+		}
+
+	}
+
 }
