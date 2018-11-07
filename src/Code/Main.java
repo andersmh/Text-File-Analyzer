@@ -8,6 +8,8 @@ public class Main {
 		
 		String s = read.readFile();
 		System.out.println(s);
+		System.out.println();
+		System.out.println(read.numberOfLetter('a'));
 		
 	}
 
