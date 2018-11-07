@@ -2,6 +2,7 @@ package Code;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -68,16 +69,34 @@ public class ReadFile {
 		return count;
 	}
 
+	
+	public void numberOfWord(String word) throws FileNotFoundException {
+
+		File file = new File(fileName);
+		try (Scanner sc = new Scanner(new FileInputStream(file))) {
+			int count = 0;
+			while (sc.hasNext()) {
+			
+				if (sc.equals(fileName)) {
+					count++;
+				}
+				sc.next();
+			}
+			System.out.println(word + ": " + count);
+		}
+
+	}
+
 	@SuppressWarnings("resource")
 	public void numberOfEachLetter() throws IOException {
 
 		File file = new File(fileName);
 		int counter = 0;
 		int ch;
-		
+
 		for (char a : "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray()) {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
-			
+
 			char toSearch = a;
 			counter = 0;
 
@@ -86,7 +105,7 @@ public class ReadFile {
 					counter++;
 				}
 			}
-			System.out.println(toSearch + " occurs " + counter);
+			System.out.println(toSearch + ": " + counter);
 		}
 
 	}
