@@ -70,6 +70,7 @@ public class ReadFile {
 	}
 
 	
+	@SuppressWarnings("unlikely-arg-type")
 	public void numberOfWord(String word) throws FileNotFoundException {
 
 		File file = new File(fileName);
