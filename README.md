@@ -1,1 +1,1 @@
-# Text-File-Analyzer
+# Text Analyzer
